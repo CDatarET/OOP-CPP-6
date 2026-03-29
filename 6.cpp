@@ -43,11 +43,19 @@ int main(){
     }
     file1.close();
 
-    cout << "Data Recorded\n\n";
+    cout << "Data Recorded to RAM\n\n";
 
     for(int i = 0; i < c; i++){
         s[i].disp();
     }
+
+    ofstream file2("file2.txt");
+    for(int i = 0; i < c; i++){
+        s[i].write(file2);
+    }
+    file2.close();
+
+    cout << "Data written to Hard Drive!" << endl;
 
     return 0;
 }
